@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CRUD - CREATE DELETE </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style type="text/css">
+     .btn-danger {
+      color: #fff;
+      background-color: #d9534f;
+      border-color: #d43f3a;
+      margin-left: 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+   <div class="row">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- FORM  -->	    
+    <div class="col-md-12">
+
+     <form class="form-horizontal" id="form-edit-client" method="post" action="/register">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Client</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client-name">Name</label>  
+          <div class="col-md-4">
+            <input id="client-name" name="cname" type="text" placeholder="your client's name" class="form-control input-md" required>
+            <span class="help-block">Full name of your customer</span>  
+          </div>
+        </div>
+
+        <!-- Prepended text-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client-email">Email</label>
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">@</span>
+              <input id="client-email" name="email" class="form-control" placeholder="yourname@yourdomain.com" type="email" required>
+            </div>
+            <p class="help-block">Email of your client</p>
+          </div>
+        </div>
+        <!-- Button -->
+      </fieldset>
+    
+    <div class="form-group">
+          <label class="col-md-4 control-label" for="btn-save"></label>
+          <div class="col-md-4" id="saveupdate">
+            <button id="btn-save" name="btn-save" class="btn btn-success">Save</button>
+          </div>
+        </div>
+      </form>
+  </div> 
+  <!-- LIST -->
+  <div class=col-md-12>
+
+      <legend>List of clients</legend>     
+      <table class="table table-bordered table-condensed table-hover">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <th>Email</th>
+            <th>Date</th>
+          </tr>
+
+        </thead>
+        <tbody id="form-list-client-body">
+          <%  users.map((user)=>{
+            %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.date %></td>
+              <td><a href="/getUser/<%= user._id %>"><button><i class="fa fa-pencil"></i></button></a></td>
+              <td><a href="/delete/<%= user._id %>"><button><i class="fa fa-trash"></i></button></a></td>
+            </tr>
+            <%
+          })%>
+        </tbody>
+      </table>
+  </div>
+</div>
+</div>
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>CRUD UPDATE</title>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <style type="text/css">
+     .btn-danger {
+      color: #fff;
+      background-color: #d9534f;
+      border-color: #d43f3a;
+      margin-left: 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+   <div class="row">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- FORM  -->	    
+    <div class="col-md-12">
+
+     <form class="form-horizontal" id="form-edit-client" method="post" action="/update">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Update Details of your client</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client-name">Name</label>  
+          <div class="col-md-4">
+            <input id="client-name" name="cname" type="text" value="<%= user.name %>" class="form-control input-md" required>
+            <span class="help-block">Full name of your customer</span>  
+          </div>
+        </div>
+
+        <!-- Prepended text-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client-email">Email</label>
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon">@</span>
+              <input id="client-email" name="email" class="form-control" value="<%= user.email %>" type="email" required>
+            </div>
+            <p class="help-block">Email of your client</p>
+          </div>
+          <input id="id" name="id" style="display:none;" value="<%= user._id %>" type="text" required>
+        </div>
+        <!-- Button -->
+      </fieldset>
+    
+    <div class="form-group">
+          <label class="col-md-4 control-label" for="btn-save"></label>
+          <div class="col-md-4" id="saveupdate">
+            <input type="submit" id="btn-save" name="btn-save" class="btn btn-success" value="Update">
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+</div>
+</script>
+</body>
+</html>
